@@ -16,7 +16,7 @@ This is a small reusable component library built using **React**, **Vite**, **Ty
 - Let users filter tasks based on status and/or priority
 
 # Project Structure
-<pre>```markdown
+<pre>
 task-dashboard/
 ├── src/
 │   ├── components/
