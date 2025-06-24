@@ -16,25 +16,26 @@ This is a small reusable component library built using **React**, **Vite**, **Ty
 - Let users filter tasks based on status and/or priority
 
 # Project Structure
-  task-dashboard/
-    ├── src/
-    │   ├── components/
-    │   │   ├── TaskList/
-    │   │   │   ├── TaskList.tsx
-    │   │   │   └── TaskItem.tsx
-    │   │   ├── TaskForm/
-    │   │   │   └── TaskForm.tsx
-    │   │   ├── TaskFilter/
-    │   │   │   └── TaskFilter.tsx
-    │   │   └── Dashboard/
-    │   │       └── Dashboard.tsx
-    │   ├── types/
-    │   │   └── index.ts
-    │   ├── utils/
-    │   │   └── taskUtils.ts
-    │   ├── App.tsx
-        ── main.tsx
-    └── package.json
+task-dashboard/
+├── src/
+│   ├── components/
+│   │   ├── Dashboard/
+│   │   │   └── Dashboard.tsx
+│   │   ├── TaskList/
+│   │   │   ├── TaskList.tsx
+│   │   │   └── TaskItem.tsx
+│   │   ├── TaskForm/
+│   │   │   └── TaskForm.tsx
+│   │   ├── TaskFilter/
+│   │   │   └── TaskFilter.tsx
+│   ├── types/
+│   │   └── index.ts
+│   ├── utils/
+│   │   └── taskUtils.ts
+│   ├── App.tsx
+│   └── main.tsx
+├── package.json
+
 
 
 ## Component Requirements
