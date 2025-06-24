@@ -1,54 +1,107 @@
-# React + TypeScript + Vite
+# Task Manager App
+This is a small reusable component library built using **React**, **Vite**, **TypeScript**, and **Tailwind CSS**. The application will list all the availabel tasks. User will be able to search for tasks based on the title, sort the tasks based on title. It allow users to Add new tasks, change the status of the Tasks, Delete tasks, Filter tasks based on Status and/or Priority 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Objective
+- Implement state management using the useState hook.
+- Build components  that render lists of data with proper key management.
+- Use conditional rendering to show different states based on item properties.
 
-Currently, two official plugins are available:
+## Features
+- See all the tasks available
+- Add new tasks 
+- Search for tasks based on the title
+- Sort the tasks based on the title
+- Let users to change status of the tasks
+- Let users to delete tasks
+- Let users filter tasks based on status and/or priority
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Project Structure
+  task-dashboard/
+    ├── src/
+    │   ├── components/
+    │   │   ├── TaskList/
+    │   │   │   ├── TaskList.tsx
+    │   │   │   └── TaskItem.tsx
+    │   │   ├── TaskForm/
+    │   │   │   └── TaskForm.tsx
+    │   │   ├── TaskFilter/
+    │   │   │   └── TaskFilter.tsx
+    │   │   └── Dashboard/
+    │   │       └── Dashboard.tsx
+    │   ├── types/
+    │   │   └── index.ts
+    │   ├── utils/
+    │   │   └── taskUtils.ts
+    │   ├── App.tsx
+        ── main.tsx
+    └── package.json
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Component Requirements
+- Dashboard Component
+- Task List Component
+- Task Item Component
+- Task Filter Component
+- Task Form component
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### 1.TaskList Component
+- Manages all task-related state.
+- Handles deletion, status updates, and filtering logic.
+- Renders a filtered list of TaskItems.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. TaskItem Component
+- Displays a single task.
+- Provides dropdown for status change.
+- Delete button removes the task.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 3. TaskFilter Component
+- Provides UI to select status and priority filters.
+- Communicates filter changes back to TaskList.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+### 4. TaskForm Component
+- Manages task state of current/new task 
+- Provides UI to enter all the data necessary to create new task
+- Adds/Ceates a new task in the task list with callback function
+- Performs form level validation
+
+## Example Interaction
+- Upon loading the application it lists all the tasks
+- Allows user to search from existing tasks
+- Allows User to sort the tasks
+- Allows user to add new task by providing all the necessary data
+- Allows user to filter tasks, delete tasks, change status of tasks
+
+## Pre-Requisite 
+- Ensure you have a recent LTS (Long-Term Support) version of Node.js installed. Node.js includes npm (Node Package Manager). - You can verify your installation by opening your terminal or command prompt and running:
+    " node -v "
+    " npm -v "
+
+- Have tailwind installed for vite/REACT
+
+## How to Run
+1. Clone or download the project.
+2. Navigate (cd) to the project folder
+3. Install Dependencies run:-  npm install
+4. Start the development server by running:- npm run dev
+5. Open the link in browser
+
+
+## Reflection:
+1. How you implemented React and TypeScript features?
+- Typescript: By creating types/interfaces for the props and importing it in the components as and when required to provide strong type safety and better code structure.
+- React: I used functional components with hooks like useState for managing component-level state. I also passed data and callback functions through props to communicate between parent and child components.
+
+2. The challenges you encountered and how you overcame them
+- The main challenge was applying filtering logic based on all the required conditions for "Sorting", "Filters", "searching". I used useState hook to manage the state of respective variables and implemented the functionality.
+- The second challenge was having/implementing callback function logic each time when I wanted to send the data back up to the parent in my case TaskList Component, I made mistakes and used console logs mostly to understand what is being passed between parent and child and eventually got the functionality working.
+
+3. Your approach to component composition and state management
+- My approach for component composition was simple, I followed the project requiremts and created the components accordingly.
+- Seggregated each functionality in to component and imported in the correct parent component
+- Implemented state managment local for the child component for the variable whose scope is within the component and used props and callback functions to transfer data/state between the components.
+
+
+
+
+
+
