@@ -1,4 +1,4 @@
-# Task Manager App
+# Task DashBoard App
 This is a small reusable component library built using **React**, **Vite**, **TypeScript**, and **Tailwind CSS**. The application will list all the availabel tasks. User will be able to search for tasks based on the title, sort the tasks based on title. It allow users to Add new tasks, change the status of the Tasks, Delete tasks, Filter tasks based on Status and/or Priority 
 
 ## Objective
